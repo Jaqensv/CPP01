@@ -6,7 +6,7 @@
 /*   By: mde-lang <mde-lang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 14:36:22 by mde-lang          #+#    #+#             */
-/*   Updated: 2024/01/30 19:04:12 by mde-lang         ###   ########.fr       */
+/*   Updated: 2024/02/01 19:31:44 by mde-lang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,9 @@ public:
     std::string s1;
     std::string s2;
     std::string file_content;
-    std::string filecreator(std::string s1);
+    std::string file_name;
+    std::string line;
+    void filecreator();
     int s1_len;
     int length;
     void mixer();
