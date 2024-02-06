@@ -6,7 +6,7 @@
 /*   By: mde-lang <mde-lang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 19:54:35 by mde-lang          #+#    #+#             */
-/*   Updated: 2024/02/06 18:39:08 by mde-lang         ###   ########.fr       */
+/*   Updated: 2024/02/06 18:40:56 by mde-lang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,6 @@ Harl::Harl(){
 
 Harl::~Harl(){
     return ;
-}
-
-void Harl::complain(std::string level){
-
-    void (Harl::*ptr[4])(void) = {&Harl::_debug, &Harl::_info, &Harl::_warning, &Harl::_error};
-    for (int i = 0; i < 4; i++)
-    {
-        if (this->level[i] == level)
-            (this->*ptr[i])();
-    }
 }
 
 void Harl::_debug()
@@ -48,4 +38,15 @@ void Harl::_warning()
 void Harl::_error()
 {
     std::cout << " This is unacceptable! I want to speak to the manager now." << std::endl;
+}
+
+void Harl::complain(std::string level){
+
+    void (Harl::*ptr[4])(void) = {&Harl::_debug, &Harl::_info, &Harl::_warning, &Harl::_error};
+
+    for (int i = 0; i < 4; i++)
+    {
+        if (this->level[i] == level)
+            (this->*ptr[i])();
+    }
 }
