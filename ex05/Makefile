@@ -1,5 +1,5 @@
 NAME = main
-SOURCES = main.cpp 
+SOURCES = main.cpp Harl.cpp
 
 OBJECTS = $(SOURCES:.cpp=.o)
 

@@ -6,20 +6,21 @@
 /*   By: mde-lang <mde-lang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 19:54:38 by mde-lang          #+#    #+#             */
-/*   Updated: 2024/02/01 20:03:21 by mde-lang         ###   ########.fr       */
+/*   Updated: 2024/02/02 18:25:51 by mde-lang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-
 #ifndef HARL_HPP
 # define HARL_HPP
+
+# include <iostream>
 
 class Harl {
 public:
     Harl();
     ~Harl();
     void complain(std::string level);
+    std::string level[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 private:
     void _debug(); //peuvent etre call par une fonction publique de la meme classe
     void _info();
