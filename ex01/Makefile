@@ -1,5 +1,5 @@
 NAME = zombie
-SOURCES = main.cpp Zombie.cpp newZombie.cpp randomChump.cpp zombieHorde.cpp
+SOURCES = main.cpp Zombie.cpp NewZombie.cpp RandomChump.cpp ZombieHorde.cpp
 
 OBJECTS = $(SOURCES:.cpp=.o)
 
