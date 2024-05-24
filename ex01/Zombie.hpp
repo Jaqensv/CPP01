@@ -6,7 +6,7 @@
 /*   By: mde-lang <mde-lang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 17:08:23 by mde-lang          #+#    #+#             */
-/*   Updated: 2024/05/24 17:08:24 by mde-lang         ###   ########.fr       */
+/*   Updated: 2024/05/24 17:14:25 by mde-lang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define ZOMBIE_HPP
 
 # include <iostream>
-# include <random>
 
 class Zombie {
 public:
