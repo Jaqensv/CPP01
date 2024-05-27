@@ -6,7 +6,7 @@
 /*   By: mde-lang <mde-lang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 14:58:05 by mde-lang          #+#    #+#             */
-/*   Updated: 2024/01/25 17:49:57 by mde-lang         ###   ########.fr       */
+/*   Updated: 2024/05/27 17:01:35 by mde-lang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,6 @@
 #include "HumanB.hpp"
 
 int main(){
-
-    // HumanA warrior("axe");
-    
-    // warrior.name = "Jean";
-    // warrior.attack();
 
 //REFERENCE
 {
