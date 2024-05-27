@@ -6,7 +6,7 @@
 /*   By: mde-lang <mde-lang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 14:36:22 by mde-lang          #+#    #+#             */
-/*   Updated: 2024/02/01 19:31:44 by mde-lang         ###   ########.fr       */
+/*   Updated: 2024/05/27 23:33:52 by mde-lang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,28 @@
 # include <string>
 
 class File {
+
 public:
     File();
+    File(std::string fileName, std::string s1, std::string s2);
     ~File();
-    std::string s1;
-    std::string s2;
-    std::string file_content;
-    std::string file_name;
-    std::string line;
-    void filecreator();
-    int s1_len;
-    int length;
+    std::string getName();
+    std::string getS1();
+    std::string getS2();
+    std::string getTheLine();
+    std::string getFileContent();
+    void fileReader(std::ifstream &ifs);
+    void fileCreator();
     void mixer();
     void counter();
+private:
+    std::string _s1;
+    std::string _s2;
+    std::string _fileContent;
+    std::string _fileName;
+    std::string _line;
+    int _s1Len;
+    int _length;
 };
 
 #endif

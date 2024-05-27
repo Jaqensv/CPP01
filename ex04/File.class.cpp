@@ -6,61 +6,97 @@
 /*   By: mde-lang <mde-lang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 14:36:18 by mde-lang          #+#    #+#             */
-/*   Updated: 2024/02/01 19:31:40 by mde-lang         ###   ########.fr       */
+/*   Updated: 2024/05/28 00:38:43 by mde-lang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "File.class.hpp"
 
-File::File(){
-    this->length = 0;
-    this->s1_len = 0;
+File::File() {
+    this->_length = 0;
+    this->_s1Len = 0;
     return ;
 }
+
+File::File(std::string fileName, std::string s1, std::string s2)
+    : _fileName(fileName), _s1(s1), _s2(s2), _s1Len(0), _length(0) {}
 
 File::~File(){
     return ;
 }
 
-void	File::filecreator()
+std::string File::getName() {
+    return this->_fileName;
+}
+
+std::string File::getS1() {
+    return this->_s1;
+}
+
+std::string File::getS2() {
+    return this->_s2;
+}
+
+std::string File::getTheLine() {
+    return this->_line;
+}
+
+std::string File::getFileContent() {
+    return this->_fileContent;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////
+
+void	File::fileCreator()
 {
-	std::ofstream ofs(this->file_name.insert(this->file_name.length(),".replace").c_str());
+	std::ofstream ofs(this->_fileName.insert(this->_fileName.length(),".replace").c_str());
     if (ofs.is_open()) {
-        ofs << this->file_content;
+        ofs << this->_fileContent;
         ofs.close();
     }
 }
 
 void File::mixer()
-{   
+{
     int j = 0;
 
-    for (int i = 0; this->file_content[i]; i++)
+    for (int i = 0; this->_fileContent[i]; i++)
     {
-        if (this->file_content[i] == this->s1[0])
+        if (this->_fileContent[i] == this->_s1[0])
         {
-            while (this->file_content[i] == this->s1[j] && this->file_content[i] && this->s1[j])
+            while (this->_fileContent[i] == this->_s1[j] && this->_fileContent[i] && this->_s1[j])
             {
                 i++;
                 j++;
             }
-            if (this->file_content[i - 1] == this->s1[this->s1_len - 1])
+            if (this->_fileContent[i - 1] == this->_s1[this->_s1Len - 1])
             {
-                i -= this->s1_len;
-                this->file_content.erase(i, s1_len);
-                this->file_content.insert(i, this->s2);
-                i += this->s1_len;
+                i -= this->_s1Len;
+                this->_fileContent.erase(i, _s1Len);
+                this->_fileContent.insert(i, this->_s2);
+                i += this->_s1Len;
             }
             j = 0;
         }
     }
-    std::cout << this->file_content << std::endl;
+    std::cout << this->_fileContent << std::endl;
 }
 
 void File::counter()
 {
-    while (this->s1[this->s1_len])
-        this->s1_len++;
-    while (this->file_content[this->length])
-        this->length++;
+    
+    while (this->_s1[this->_s1Len])
+        this->_s1Len++;
+    while (this->_fileContent[this->_length])
+        this->_length++;
+}
+
+void File::fileReader(std::ifstream &ifs) {
+
+    while (std::getline(ifs, this->_line))
+    {
+        this->_fileContent += this->_line;
+        if (!ifs.eof())
+            this->_fileContent += "\n";
+    }
 }
