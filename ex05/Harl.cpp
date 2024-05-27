@@ -6,7 +6,7 @@
 /*   By: mde-lang <mde-lang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 19:54:35 by mde-lang          #+#    #+#             */
-/*   Updated: 2024/02/06 18:40:56 by mde-lang         ###   ########.fr       */
+/*   Updated: 2024/05/28 01:36:55 by mde-lang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ void Harl::complain(std::string level){
     for (int i = 0; i < 4; i++)
     {
         if (this->level[i] == level)
-            (this->*ptr[i])();
+            return (this->*ptr[i])();
     }
+    std::cout << "Please enter one of the following commands: DEBUG, INFO, WARNING, ERROR or EXIT" << std::endl;
 }
